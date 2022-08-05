@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Qatra-input</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="title">
+            <h2>تسجيل فصيلة جديدة</h2>
+            <p id="ok"></p>
+        </div>
+        <form method="post" class="form-input">
+            <fieldset>
+                <legend>الاسم الكامل</legend>
+                <input type="text" id="firstname" placeholder="الاسم الأول" name="firstname" required>
+                <input type="text" id="lastname" placeholder="اسم العائلة" name="lastname" required>
+            </fieldset>
+            <fieldset>
+                <legend>العنوان</legend>
+                <select name="Governorate" id="Governorate" required>
+                    <option value="">اختر المحافظة</option>
+                    <option value="1">القاهرة</option>
+                    <option value="2">الجيزة</option>
+                    <option value="3">الأسكندرية</option>
+                    <option value="4">الدقهلية</option>
+                    <option value="5">الشرقية</option>
+                    <option value="6">المنوفية</option>
+                    <option value="7">القليوبية</option>
+                    <option value="8">البحيرة</option>
+                    <option value="9">الغربية</option>
+                    <option value="10">بورسعيد</option>
+                    <option value="11">دمياط</option>
+                    <option value="12">الإسماعيلية</option>
+                    <option value="13">السويس</option>
+                    <option value="14">كفر الشيخ</option>
+                    <option value="15">الفيوم</option>
+                    <option value="16">بني سويف</option>
+                    <option value="17">مطروح</option>
+                    <option value="18">شمال سيناء</option>
+                    <option value="19">جنوب سيناء</option>
+                    <option value="20">المنيا</option>
+                    <option value="21">أسيوط</option>
+                    <option value="22">سوهاج</option>
+                    <option value="23">قنا</option>
+                    <option value="24">البحر الأحمر</option>
+                    <option value="25">الأقصر</option>
+                    <option value="26">أسوان</option>
+                    <option value="27">الواحات</option>
+                    <option value="28">الوادي الجديد</option>
+                </select>
+                <input type="text" id="city" placeholder="المدينة / القرية" name="city" required>
+            </fieldset>
+            <fieldset>
+                <legend>نوع الدم</legend>
+                <select name="blood-type" id="blood-type" required>
+                    <option value="">اختر الفصيلة</option>
+                    <option value="1">A+</option>
+                    <option value="2">O+</option>
+                    <option value="3">B+</option>
+                    <option value="4">AB+</option>
+                    <option value="5">A-</option>
+                    <option value="6">B-</option>
+                    <option value="7">O-</option>
+                    <option value="8">AB-</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>معلومات الاتصال</legend>
+                <input type="text" id="phone" placeholder="رقم الهاتف" name="phone" minlength="11"  maxlength="11" required>
+                <input type="email" id="email" placeholder="البريد الاكتروني" name="email" required>
+            </fieldset>
+            <input type="submit" value="إدخال">
+        </form>7
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
