@@ -5,9 +5,7 @@
 
 
 // Form Validationl
-let form = document.querySelector(".form-input") 
-let formContainer = document.querySelector(".form-container")
-let ok = document.querySelector("#ok")
+let form = document.querySelector(".input") 
 form.onsubmit = () => {
     event.preventDefault()
     setInterval(() => {

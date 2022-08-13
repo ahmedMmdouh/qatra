@@ -11,23 +11,9 @@
 </head>
 
 <body>
-    <div class="search-container">
-        <div class="title">
+        <form method="post" class="search">
             <h2>بحث عن فصيلة</h2>
-            <p id="ok"></p>
-        </div>
-        <form method="post" class="form-search">
-            <select name="blood-type" id="blood-type" required>
-                <option value="">اختر الفصيلة</option>
-                <option value="1">A+</option>
-                <option value="2">O+</option>
-                <option value="3">B+</option>
-                <option value="4">AB+</option>
-                <option value="5">A-</option>
-                <option value="6">B-</option>
-                <option value="7">O-</option>
-                <option value="8">AB-</option>
-            </select>
+            <label for="Governorate">المحافظة</label>
             <select name="Governorate" id="Governorate" required>
                 <option value="">اختر المحافظة</option>
                 <option value="1">القاهرة</option>
@@ -59,13 +45,67 @@
                 <option value="27">الواحات</option>
                 <option value="28">الوادي الجديد</option>
             </select>
-            <input id="btn" type="submit" value="بحث">
+            <label for="blood-type">الفصيلة</label>
+            <select name="blood-type" id="blood-type" required>
+                <option value="">اختر الفصيلة</option>
+                <option value="1"><sup>+</sup>A</option>
+                <option value="2"><sup>+</sup>B</option>
+                <option value="3"><sup>+</sup>O</option>
+                <option value="4"><sup>+</sup>AB</option>
+                <option value="5"><sup>-</sup>A</option>
+                <option value="6"><sup>-</sup>B</option>
+                <option value="7"><sup>-</sup>O</option>
+                <option value="8"><sup>-</sup>AB</option>
+            </select>
+            <input id="#btn" type="submit" value="بحث">
         </form>
-    </div>
+        <div class="erorr">
+            <p>عفوا ! لاتوجد بيانات مطابقة</p>
+        </div>
+        <div class="result">
+            <div class="card">
+                <div id="fasela" class="name-blood">
+                    <p>أحمد ممدوح الجوهري</p>
+                    <div class="blood">
+                        <p class="blood-name"><sup>+</sup>B</p>
+                        <img src="images/423-4237597_1000-x-750-13-blood-drop-icon-png.png" alt="">
+                    </div>
+                </div>
+                <div class="phone-city">
+                    <div class="phone">
+                        <p>رقم الهاتف</p>
+                        <span id="phone">01014005429</span>
+                    </div>
+                    <div class="mohafza">
+                        <p>محافظة</p>
+                        <span id="mohafza">الدقهلية</span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="card">
+                <div class="name-blood">
+                    <p>أحمد ممدوح احمد ابو العنين الجوهري</p>
+                    <div class="blood">
+                        <p class="blood-name"><sup>+</sup>B</p>
+                        <img src="images/423-4237597_1000-x-750-13-blood-drop-icon-png.png" alt="">
+                    </div>
+                </div>
+                <div class="phone-city">
+                    <div class="phone">
+                        <p>رقم الهاتف</p>
+                        <span>01014005429</span>
+                    </div>
+                    <div class="mohafza">
+                        <p>محافظة</p>
+                        <span>الدقهلية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script>
         let btn = document.querySelector("#btn")
-        let form = document.querySelector(".form-search")
+        let form = document.querySelector(".search")
 
         form.onsubmit = () => {
             event.preventDefault();

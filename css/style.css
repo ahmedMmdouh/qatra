@@ -12,6 +12,7 @@ body{
     background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     direction: rtl;
 }
 .container{
@@ -43,9 +44,11 @@ body{
 .buttons{
     width: 60%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 .buttons a{
+    width: fit-content;
     font-size: 20px;
     text-decoration: none;
     color: #fff;
@@ -53,116 +56,186 @@ body{
     padding: 10px 30px;
     background: linear-gradient(to bottom right, #ED213A, #93291E);
 }
-/* .test{
-    width: 500px;
-    height: 500px;
-    background-color: rgb(126, 126, 125);
-    position: relative;
-    margin-top: 100px;
-    border-radius: 10px;
-}
-.test::after{
-    content: "";
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: red;
-} */
 footer{
     width: 100%;
     position: fixed;
-    bottom: 10px;
-    color: #000;
-    text-align: center;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 footer p {
-    font-size: 20px;
-}
-.form-container{
-    max-width: 80vw;
-    margin: auto;
-    padding: 50px 50px 0px;
-}
-.title{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.form-input{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    padding: 5px;
-}
-.form-input fieldset{
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    gap: 1rem;
-    flex-direction: column
-}
-.form-input legend{
-    padding: 5px;
-    font-weight: bold;
-}
-.form-input input,select{
-    padding: 1rem 2rem;
+    text-align: center;
     font-size: 18px;
-    -webkit-padding-start: 1rem 2rem;
-    -moz-padding-start: 1rem 2rem;
-    -o-padding-start: 1rem 2rem;
 }
-.form-input input::placeholder{
+form.input{
+    width: 1200px;
+    background-color: #EBEFF2;
+    min-height: 100vh;
+    margin: auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+form.input h2{
+    margin-bottom: 40px;
+}
+form.input label{
+    width: 100%;
+    font-size: 1.3rem;
+}
+form.input input, select{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+form.input input:last-child{
+    width: fit-content;
+    background-color: #304EFF;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+form.input input:last-child:hover{
+    padding: 10px 30px;
+    background-color: #1a3af1;
+}
+form.input input:not(:last-child){
+    margin-bottom: 15px;
+}
+form.input select{
+    margin-bottom: 30px;
+}
+form.search{
+    width: 1200px;
+    background-color: #EBEFF2;
+    margin: auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+form.search h2{
+    margin-bottom: 40px;
+}
+form.search label{
+    width: 100%;
+    font-size: 1.3rem;
+}
+form.search input, select{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+form.search input:last-child{
+    width: fit-content;
+    background-color: #304EFF;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+form.search input:last-child:hover{
+    padding: 10px 30px;
+    background-color: #1a3af1;
+}
+form.search input:not(:last-child){
+    margin-bottom: 15px;
+}
+form.search select{
+    margin-bottom: 30px;
+}
+.erorr{
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+.erorr.show{
+    display: block;
+}
+.erorr p{
+    color: red;
     font-size: 20px;
 }
-.form-input input[type=submit]{
-    font-size: 25px;
-    cursor: pointer;
-}
-
-/* Search Page */
-
-.search-container{
-    max-width: 80vw;
+.result{
+    width: 1200px;
     margin: auto;
-    padding: 50px 50px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    display: none;
 }
-.title{
+.result.show{
+    display: block;
+}
+.result .card{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000;
+    padding: 10px 0px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.result .card .name-blood{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px;
+    border-bottom: 3px solid #000;
+}
+.result .card .name-blood p {
+    font-size: 25px;
+}
+.result .card .name-blood .blood{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-right: 30px;
+    border-right: 3px solid #000;
+}
+.result .card .name-blood .blood img{
+    width: 30px;
+}
+.result .card .phone-city {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.result .card .phone-city .phone{
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.form-search{
-    width: 100%;
-    margin: auto;
+.result .card .phone-city .mohafza{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
     align-items: center;
-    justify-content: space-around;
-    padding: 5px;
+    gap: 15px;
 }
-.form-search input ,select{
-    width: 100%;
-}
-.form-search input[type=submit]{
-    font-size: 25px;
-    cursor: pointer;
-    padding: 10px 20px;
-}
-
 @media (max-width: 900px){
+    .buttons{
+        width:100%;
+    }
     .info img{
         width: 50%;
     }
     .info h3 {
+        font-size: 20px;
         text-align: center;
     }
     .buttons{
@@ -174,19 +247,37 @@ footer p {
         padding: 10px 30px;
         text-align: center;
     }
-    .form-container{
-        max-width: 90vw;
-        padding:5px;
+}
+
+@media (max-width: 1200px){
+    form.input{
+        width: 100%;
     }
-    .form-input{
-        width:100%;
-        margin: auto;
+    form.search{
+        width: 100%;
     }
-    .search-container{
-        max-width: 90vw;
-        padding:5px;
+    .erorr{
+        width: 100%;
+    }
+    .result{
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .result .card{
+        width: 90%;
+    }
+    .result .card .name-blood p {
+        font-size: 18px;
+    }
+    .result .card .name-blood p.blood-name {
+        font-size: 20px;
+    }
+    .result .card .name-blood .blood img{
+        width: 20px;
     }
 }
+
 @media (min-width: 1500px){
     .buttons{
         width: 30%;
